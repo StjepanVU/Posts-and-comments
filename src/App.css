@@ -48,13 +48,21 @@ header {
   }
 
 .menu {
-  padding: 3%;
+  padding: 2px;
+  margin-left: 10px;
+  width: fit-content;
   height: 40px;
   display: inline-flex;
   font-weight: 100;
   margin: 0 auto;
 }
-.menu:hover {
+.menu-text {
+  margin-left: 30px;
+}
+.logo {
+  margin-top:10px;
+}
+.menu-text:hover {
   border-bottom: 1px solid bisque;
 }
 
@@ -67,5 +75,6 @@ header {
 .container {
   margin-top: 1%;
   border:1px solid #282c34;
+  height: 800px;
 }
 
