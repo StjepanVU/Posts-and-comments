@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.body {
+  background: #DEDEDE;
+}
+.header-div {
+  margin-top:1%;
+  background:#02AABA;
+  height: 65px;
+}
+.menu {
+  padding: 5%;
+}
+
+.search-div {
+  margin-top:1%;
+  height: 65px;
+
+}
+
