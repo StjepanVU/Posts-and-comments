@@ -7,10 +7,14 @@ class Header extends react.Component {
                 <div className="row">
                     
                     <div className="col-md-6 offset-1 border header-div">
-                        <span className="menu logo"><img src="https://protostar.ai/wp-content/uploads/2019/10/aple.png" width="30" height="30"/></span>
-                        <span className="menu menu-text"><p>Home</p></span>
-                        <span className="menu menu-text"><p>JSON</p></span>
-                        <span className="menu menu-text"><p>Contact</p></span>
+                        
+                        <p className="menu-item logo"><img src="https://protostar.ai/wp-content/uploads/2019/10/aple.png" 
+                        width="40" height="40"/>
+                        </p>
+                        <p className="menu-item menu-text">Home</p>
+                        <p className="menu-item menu-text">JSON</p>
+                        <p className="menu-item menu-text">Contact</p>
+                        
                     </div>
                     
                     <div className="col-md-1 border bg-white search-div">
