@@ -37,21 +37,35 @@
   }
 }
 
-.body {
-  background: #DEDEDE;
+header {
+  margin-top: 10px;
 }
 .header-div {
-  margin-top:1%;
-  background:#02AABA;
-  height: 65px;
-}
+  margin-top:10%;
+  background:#282c34;
+  height: 60px;
+  color:white;
+  }
+
 .menu {
-  padding: 5%;
+  padding: 3%;
+  height: 40px;
+  display: inline-flex;
+  font-weight: 100;
+  margin: 0 auto;
+}
+.menu:hover {
+  border-bottom: 1px solid bisque;
 }
 
 .search-div {
-  margin-top:1%;
-  height: 65px;
+  margin-left: 20px;
+  height: 60px;
 
+}
+
+.container {
+  margin-top: 1%;
+  border:1px solid #282c34;
 }
 

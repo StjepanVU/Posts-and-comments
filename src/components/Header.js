@@ -4,15 +4,16 @@ class Header extends react.Component {
     render() {
         return (
             <header>
-                <div class="row">
+                <div className="row">
                     
-                    <div class="col-md-6 offset-1 border header-div">
-                        <span class="menu">Home</span>
-                        <span class="menu">JSON</span>
-                        <span class="menu">Contact</span>
+                    <div className="col-md-6 offset-1 border header-div">
+                        {/* <span className="menu logo"><img src="https://protostar.ai/wp-content/uploads/2019/10/aple.png"/></span> */}
+                        <span className="menu"><p>Home</p></span>
+                        <span className="menu"><p>JSON</p></span>
+                        <span className="menu"><p>Contact</p></span>
                     </div>
                     
-                    <div class="col-md-1 border bg-white offset-1 search-div">
+                    <div className="col-md-1 border bg-white search-div">
 
                     </div>
                 </div>
