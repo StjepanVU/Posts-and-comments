@@ -21,19 +21,26 @@ class ContentBox extends react.Component {
                     posts: data
                 })
             } )
+        // Fetching comments for posts
+        /* fetch("https://jsonplaceholder.typicode.com/posts/"+{id}+"/comments")
+            .then((response) => response.json())
+            .then((json) => console.log(json)); */
     }
     
  
     render() {
+        console.log("Hello from " + this.props.name)
         return (
             <span className="content-span">
             {this.state.posts.map((data) => 
-            <div className="card">  
+            <div key={data.id} className="card">  
             <h5 className="card-title">{data.title}</h5>
             <div className="card-body">
             <p className="card-text">{data.body}</p>
             <hr></hr>
-            <p className="comments-text">Comments: <br></br> est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et</p>
+
+            <p className="comments-text">Comments:
+             <br></br> est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et</p>
             <a href="" className="btn btn-success content-box-button">Open</a>
             </div>
             </div>

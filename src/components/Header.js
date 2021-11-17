@@ -1,9 +1,12 @@
 import react from "react";
 
 class Header extends react.Component {
-    render() {
+    
+    render() { 
+        console.log("Hello from " + this.props.name) 
         return (
             <header>
+               
                 <div className="row">
                     
                     <div className="col-md-6 offset-1 border header-div">

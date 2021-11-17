@@ -10,8 +10,8 @@ class App extends react.Component {
   render() {
       return (
         <main>
-          <Header/>
-          <Container/>
+          <Header name="Header"/>
+          <Container name="Container"/>
         </main>
     )
   }
