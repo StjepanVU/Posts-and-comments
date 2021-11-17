@@ -25,7 +25,7 @@ class ContentBox extends react.Component {
  
     render() {
         return (
-            <div>
+            <span className="content-span">
             {this.state.posts.map((data) => 
             <div className="card">  
             <h5 className="card-title">{data.title}</h5>
@@ -36,7 +36,7 @@ class ContentBox extends react.Component {
             
             </div>
             )}
-            </div>
+            </span>
             
             
             
