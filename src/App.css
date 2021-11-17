@@ -108,4 +108,7 @@ header {
 /*Button*/
 .btn {
   margin: 10px auto;
+  position: absolute;
+  bottom: 5%;
+  left: 40%;
 }
