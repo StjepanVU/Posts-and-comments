@@ -3,7 +3,7 @@ import react from "react";
 class Header extends react.Component {
     
     render() { 
-        console.log("Hello from " + this.props.name) 
+        console.log(this.props.name) 
         return (
             <header>
                

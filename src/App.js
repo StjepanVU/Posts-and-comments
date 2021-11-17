@@ -8,10 +8,13 @@ import react from 'react';
 class App extends react.Component {
 
   render() {
+    const message = "Hello from "
+    const header = "Header"
+    const container = "Container"
       return (
         <main>
-          <Header name="Header"/>
-          <Container name="Container"/>
+          <Header name={`${message} ${header}`}/>
+          <Container name={`${message} ${container}`}/>
         </main>
     )
   }
