@@ -79,11 +79,12 @@ header {
   background: #f6f6f6;
   margin-top: 1%;
   border: 1px solid #282c34;
-  height: 500px;
+  height: 550px;
 }
 .content-container {
-  margin: 50px auto;
+  margin: 25px auto;
   overflow:auto;
+  height: 500px;
   width: 100%;
 } 
 .content-span {
@@ -92,9 +93,9 @@ header {
 
 /* Main card container*/
 .card {
-  margin: 20px 20px;
+  margin: 0 20px;
   width: 350px;
-  height: 350px;
+  height: 450px;
 }
 .card-title {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEXJ/sbBPDujAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC");
@@ -103,6 +104,11 @@ header {
 }
 .card-body {
   text-align: center;
+}
+.comments-text {
+  height:95px;
+  display:inline-block;
+  overflow:auto;
 }
 
 /*Button*/
