@@ -5,12 +5,13 @@ import Container from './components/Container';
 import ContentBox from './components/ContentBox';
 
 function App() {
+
   return (
     <main>
       <Header/>
       <Container/>
     </main>
-  );
+  )
 }
 
 export default App;
