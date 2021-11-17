@@ -8,6 +8,8 @@ class ContentBox extends react.Component {
         
         this.state = {
             posts: [],
+            comments: ""
+            
         }
             
     } 
@@ -19,16 +21,39 @@ class ContentBox extends react.Component {
             .then(data => {
                 this.setState({
                     posts: data
+                    
                 })
+                
             } )
-        // Fetching comments for posts
-        /* fetch("https://jsonplaceholder.typicode.com/posts/"+{id}+"/comments")
+            
+        /* fetch(`https://jsonplaceholder.typicode.com/posts/1/comments`)
             .then((response) => response.json())
-            .then((json) => console.log(json)); */
-    }
+            .then(data => {
+                this.setState({
+                    comments: data
+                })
+            }) */
+
+        }
+        
+        fetchComments(postsId) {
+            
+            return <p>
+                Comments:<br></br>
+                {`https://jsonplaceholder.typicode.com/posts/${postsId}/comments`}
+                </p>
+                           
+        }
+
+
+ 
+   
+
+
     
  
     render() {
+        
         const componentName = "Content box"
         console.log(`${this.props.message} ${componentName}`)
         return (
@@ -39,14 +64,19 @@ class ContentBox extends react.Component {
             <div className="card-body">
             <p className="card-text">{data.body}</p>
             <hr></hr>
-
-            <p className="comments-text">Comments:
-             <br></br> est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et</p>
+             
+            {/* <p key={data.id} className="comments-text">Comments:<br></br>
+            </p> */}
+            {this.fetchComments(data.id)}
+            
+            
+            
             <a href="" className="btn btn-success content-box-button">Open</a>
             </div>
             </div>
             )}
             </span>
+            
             
             
             
@@ -58,25 +88,3 @@ class ContentBox extends react.Component {
 export default ContentBox
 
 
-/* {this.state.posts.map((data) => 
-    <h5 className="card-title">{data.title}</h5>
-    )} */
-
-
-/*<div className="card"> 
-    <h5 className="card-title">{data.title}</h5>
-    <div className="card-body">
-    <p className="card-text">{data.body}</p>
-    <a href="#" className="btn btn-success content-box-button">Open</a>
-    </div>
-</div> */
-
-/* onClick={() => {
-    return (
-        <Router>
-            <Switch>
-                <Route exact path="/contentbox" component={ContentBox}/>
-            </Switch>
-        </Router>
-    )
-}} */
