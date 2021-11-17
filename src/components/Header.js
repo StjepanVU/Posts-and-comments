@@ -3,7 +3,8 @@ import react from "react";
 class Header extends react.Component {
     
     render() { 
-        console.log(this.props.name) 
+        const componentName = "Header"
+        console.log(`${this.props.message} ${componentName}`) 
         return (
             <header>
                

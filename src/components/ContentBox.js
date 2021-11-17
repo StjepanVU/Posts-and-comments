@@ -29,7 +29,8 @@ class ContentBox extends react.Component {
     
  
     render() {
-        console.log(this.props.name)
+        const componentName = "Content box"
+        console.log(`${this.props.message} ${componentName}`)
         return (
             <span className="content-span">
             {this.state.posts.map((data) => 
