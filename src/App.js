@@ -3,15 +3,18 @@ import './App.css';
 import Header from './components/Header';
 import Container from './components/Container';
 import ContentBox from './components/ContentBox';
+import react from 'react';
 
-function App() {
+class App extends react.Component {
 
-  return (
-    <main>
-      <Header/>
-      <Container/>
-    </main>
-  )
+  render() {
+      return (
+        <main>
+          <Header/>
+          <Container/>
+        </main>
+    )
+  }
 }
 
 export default App;
