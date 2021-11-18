@@ -74,6 +74,9 @@ header {
   height: 75px;
 
 }
+.search-bar {
+  margin: 20px 20px;
+}
 
 .container {
   background: #f6f6f6;

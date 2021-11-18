@@ -23,7 +23,7 @@ class Header extends react.Component {
                     
                    
                     <p className="menu-item menu-text">
-                    <a href="https://protostar.ai/" target="_blank">Home
+                    <a href="">Home
                     </a>
                     </p>
                     
@@ -44,8 +44,9 @@ class Header extends react.Component {
                     
                     </div>
                     
-                    <div className="col-md-2 border bg-white search-div"> Search engine
+                    <div className="col-md-2 bg-white search-div">
                         {/* Search engine */}
+                        <input className="search-bar" type="text"></input>
                     </div>
                 </div>
             </header>

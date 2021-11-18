@@ -1,6 +1,7 @@
 import react from "react";
 import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 
+
 class ContentBox extends react.Component {
     
     constructor(props) {
@@ -8,11 +9,11 @@ class ContentBox extends react.Component {
         
         this.state = {
             posts: [],
-            comments: ""
-            
         }
             
-    } 
+    }
+    
+    
 
     componentDidMount() {
         
@@ -23,31 +24,26 @@ class ContentBox extends react.Component {
                     posts: data
                     
                 })
-                
+                // console.log(data)
             } )
             
-        /* fetch(`https://jsonplaceholder.typicode.com/posts/1/comments`)
-            .then((response) => response.json())
-            .then(data => {
-                this.setState({
-                    comments: data
-                })
-            }) */
 
         }
         
-        fetchComments(postsId) {
-            
-            return <p>
-                Comments:<br></br>
-                {`https://jsonplaceholder.typicode.com/posts/${postsId}/comments`}
-                </p>
-                           
-        }
+    // https://jsonplaceholder.typicode.com/posts/1/comments
 
-
+    fetchComments(userId) {
+        fetch(`https://jsonplaceholder.typicode.com/posts/${userId}/comments`)
+           .then(response => response.json())
+           .then(result => console.log(result))
+     }
+      
  
-   
+
+
+        
+
+           
 
 
     
@@ -67,8 +63,11 @@ class ContentBox extends react.Component {
              
             {/* <p key={data.id} className="comments-text">Comments:<br></br>
             </p> */}
+            <p className="comments-text">
+            Comments: <br></br>    
             {this.fetchComments(data.id)}
-            
+            {data.id}
+            </p>
             
             
             <a href="" className="btn btn-success content-box-button">Open</a>
@@ -88,3 +87,21 @@ class ContentBox extends react.Component {
 export default ContentBox
 
 
+
+
+/* fetchComments(postId) {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`) 
+            .then(response => response.json())
+            .then(data=> {
+                var comments = []
+                for(var i = 0; i < data.length; i++) {
+                    comments.push(data[i].body)
+                    console.log(` Name: ${data[i].name}`)
+                    console.log(`Comments: ${comments}`)
+                }
+                return comments
+                    
+                    
+                })  
+                        
+} */
