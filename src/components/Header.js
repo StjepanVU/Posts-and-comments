@@ -46,7 +46,8 @@ class Header extends react.Component {
                     
                     <div className="col-md-2 bg-white search-div">
                         {/* Search engine */}
-                        <input className="search-bar" type="text"></input>
+                        
+                        <input id="search" className="search-bar" type="text"></input><h5 className="search-text">search</h5>
                     </div>
                 </div>
             </header>
