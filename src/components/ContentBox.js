@@ -31,25 +31,39 @@ class ContentBox extends react.Component {
         }
         
     // https://jsonplaceholder.typicode.com/posts/1/comments
-
-    fetchComments(userId) {
-        fetch(`https://jsonplaceholder.typicode.com/posts/${userId}/comments`)
-           .then(response => response.json())
-           .then(result => console.log(result))
-     }
-      
- 
-
-
+    /* Ovdje sam se namucio... nisam uspio omoguciti da ispisuje fetchane komentare iako mi u konzoli ispisuje generirani array komentara
+    iz .next(), nisam uspio skuziti gdje radim gresku*/
+    fetchCommentsRoute(id) {
+        var comments = []
+        var comment = ""
         
+        fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
+                .then(response => response.json())
+                .then(data => {
+                    comment = data.map(comment=>comment.body)
+                    for(var i=0; i < comment.length; i++ ){
+                        comments.push(comment[i])
+                    }
+                    // console.log(comments)
+                }
+                )
+        
+        
+        console.log(`${id}:`)
+        
+        console.log(comments)
+
+        return comments.map((comm)=> <p>{comm}</p>)
+        
+     }     
 
            
 
 
     
- 
+    
     render() {
-        
+        var comment = []
         const componentName = "Content box"
         console.log(`${this.props.message} ${componentName}`)
         return (
@@ -60,14 +74,12 @@ class ContentBox extends react.Component {
             <div className="card-body">
             <p className="card-text">{data.body}</p>
             <hr></hr>
-             
-            {/* <p key={data.id} className="comments-text">Comments:<br></br>
-            </p> */}
-            <p className="comments-text">
-            Comments: <br></br>    
-            {this.fetchComments(data.id)}
-            {data.id}
-            </p>
+            
+            <div className="comments-text">
+            Comments: <br></br>
+            {this.fetchCommentsRoute(data.id)}
+            
+            </div>
             
             
             <a href="" className="btn btn-success content-box-button">Open</a>
@@ -105,3 +117,15 @@ export default ContentBox
                 })  
                         
 } */
+
+
+
+/* fetchComments(userId) {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${userId}/comments`)
+       .then(response => response.json())
+       .then(result => console.log(result))
+ } */
+
+
+
+ 
