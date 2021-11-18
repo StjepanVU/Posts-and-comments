@@ -54,12 +54,8 @@ class ContentBox extends react.Component {
         
         console.log(comments)
          
-        return (
-            comments.map((comm)=>
-                 
-                    <li>{comm}</li>
-                )
-            )
+        return comments.map((comm) => <li>{comm}</li>)
+            
         
      }     
 
@@ -69,7 +65,7 @@ class ContentBox extends react.Component {
     
     
     render() {
-        var comment = []
+
         const componentName = "Content box"
         console.log(`${this.props.message} ${componentName}`)
         return (
@@ -83,6 +79,10 @@ class ContentBox extends react.Component {
 
                 <div className="comments-text">
                 Comments: <br></br>
+                laudantium enim quasi est quidem magnam voluptate ipsam eos
+                ntempora quo necessitatibus ndolor quam autem quasi
+                nreiciendis et nam sapiente accusantium 
+                <br></br>
                 {data.id}
                 <ul>{this.fetchCommentsRoute(data.id)}</ul>
                 
