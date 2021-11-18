@@ -31,8 +31,9 @@ class ContentBox extends react.Component {
         }
         
     // https://jsonplaceholder.typicode.com/posts/1/comments
-    /* Ovdje sam se namucio... nisam uspio omoguciti da ispisuje fetchane komentare iako mi u konzoli ispisuje generirani array komentara
-    iz .next(), nisam uspio skuziti gdje radim gresku*/
+    /* Ovdje nisam uspio omoguciti da ispisuje komentare u Content Box, iako mi u konzoli dobro ispisuje generirani array komentara za svaki post,
+    nisam skuzio gdje radim gresku, dodao sam dummy tekst u Comment konejner da ne bude prazno, search box i route-ove nisam stigao implementirati do zadanog roka*/
+    
     fetchCommentsRoute(id) {
         var comments = []
         var comment = ""
@@ -52,8 +53,13 @@ class ContentBox extends react.Component {
         console.log(`${id}:`)
         
         console.log(comments)
-
-        return comments.map((comm)=> <p>{comm}</p>)
+         
+        return (
+            comments.map((comm)=>
+                 
+                    <li>{comm}</li>
+                )
+            )
         
      }     
 
@@ -68,24 +74,25 @@ class ContentBox extends react.Component {
         console.log(`${this.props.message} ${componentName}`)
         return (
             <span className="content-span">
-            {this.state.posts.map((data) => 
-            <div key={data.id} className="card">  
-            <h5 className="card-title">{data.title}</h5>
-            <div className="card-body">
-            <p className="card-text">{data.body}</p>
-            <hr></hr>
-            
-            <div className="comments-text">
-            Comments: <br></br>
-            {this.fetchCommentsRoute(data.id)}
-            
-            </div>
-            
-            
-            <a href="" className="btn btn-success content-box-button">Open</a>
-            </div>
-            </div>
-            )}
+                {this.state.posts.map((data) => 
+                <div key={data.id} className="card">  
+                <h5 className="card-title">{data.title}</h5>
+                <div className="card-body">
+                <p className="card-text">{data.body}</p>
+                <hr></hr>
+
+                <div className="comments-text">
+                Comments: <br></br>
+                {data.id}
+                <ul>{this.fetchCommentsRoute(data.id)}</ul>
+                
+                </div>
+                
+                
+                <a href="" className="btn btn-success content-box-button">Open</a>
+                </div>
+                </div>
+                )}
             </span>
             
             
