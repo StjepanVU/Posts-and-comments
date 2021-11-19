@@ -1,5 +1,4 @@
 import react from "react";
-import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 
 
 class ContentBox extends react.Component {
@@ -9,6 +8,7 @@ class ContentBox extends react.Component {
         
         this.state = {
             posts: [],
+            comments:[]
         }
             
     }
@@ -24,40 +24,36 @@ class ContentBox extends react.Component {
                     posts: data
                     
                 })
-                // console.log(data)
+                
+            } )
+        
+        fetch("https://jsonplaceholder.typicode.com/comments")
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    comments: data
+                    
+                })
+                
             } )
             
 
         }
         
-    // https://jsonplaceholder.typicode.com/posts/1/comments
-    /* Ovdje nisam uspio omoguciti da ispisuje komentare u Content Box, iako mi u konzoli dobro ispisuje generirani array komentara za svaki post,
-    nisam skuzio gdje radim gresku, dodao sam dummy tekst u Comment konejner da ne bude prazno, search box i route-ove nisam stigao implementirati do zadanog roka*/
     
-    fetchCommentsRoute(id) {
-        var comments = []
-        var comment = ""
+    
+    findComments(id) {
+        var comments = this.state.comments
+        var postComments = []
+        comments.map((comments)=> {
+            if(id === comments.postId) {
+                postComments.push(comments.body)
+            }
+        })
+
+        return postComments.map((comment)=> <li>{comment}</li>)
         
-        fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
-                .then(response => response.json())
-                .then(data => {
-                    comment = data.map(comment=>comment.body)
-                    for(var i=0; i < comment.length; i++ ){
-                        comments.push(comment[i])
-                    }
-                    // console.log(comments)
-                }
-                )
-        
-        
-        console.log(`${id}:`)
-        
-        console.log(comments)
-         
-        return comments.map((comm) => <li>{comm}</li>)
-            
-        
-     }     
+    }
 
            
 
@@ -65,7 +61,7 @@ class ContentBox extends react.Component {
     
     
     render() {
-
+        
         const componentName = "Content box"
         console.log(`${this.props.message} ${componentName}`)
         return (
@@ -78,14 +74,14 @@ class ContentBox extends react.Component {
                 <hr></hr>
 
                 <div className="comments-text">
-                Comments: <br></br>
-                laudantium enim quasi est quidem magnam voluptate ipsam eos
-                ntempora quo necessitatibus ndolor quam autem quasi
-                nreiciendis et nam sapiente accusantium 
+                Comments:
                 <br></br>
-                {data.id}
-                <ul>{this.fetchCommentsRoute(data.id)}</ul>
-                
+                <ul>
+                {this.findComments(data.id)}
+                </ul>
+                {/* laudantium enim quasi est quidem magnam voluptate ipsam eos
+                ntempora quo necessitatibus ndolor quam autem quasi
+                nreiciendis et nam sapiente accusantium */} 
                 </div>
                 
                 
@@ -108,30 +104,28 @@ export default ContentBox
 
 
 
-/* fetchComments(postId) {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`) 
+/* fetchCommentsRoute(id) {
+    var comments = []
+    var comment = ""
+    
+    
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
             .then(response => response.json())
-            .then(data=> {
-                var comments = []
-                for(var i = 0; i < data.length; i++) {
-                    comments.push(data[i].body)
-                    console.log(` Name: ${data[i].name}`)
-                    console.log(`Comments: ${comments}`)
+            .then(data => {
+                comment = data.map(comment=>comment.body)
+                for(var i=0; i < comment.length; i++ ){
+                    comments.push(comment[i])
                 }
-                return comments
-                    
-                    
-                })  
-                        
+                // console.log(comments)
+            }
+            )
+    
+    
+    return comments.map((comm)=>{
+        <li>{comm}</li>
+    })
+    
 } */
-
-
-
-/* fetchComments(userId) {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${userId}/comments`)
-       .then(response => response.json())
-       .then(result => console.log(result))
- } */
 
 
 
