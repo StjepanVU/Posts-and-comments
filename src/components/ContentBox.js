@@ -55,7 +55,7 @@ class ContentBox extends react.Component {
 
         return postComments.map((comment)=> 
             <div>
-            <li>{eMail.shift()}:<br></br>{comment}</li>
+            <li>{eMail.shift()} wrote:<br></br>{comment}</li>
             <hr></hr>
             </div>
             )
