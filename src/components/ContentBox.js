@@ -55,7 +55,7 @@ class ContentBox extends react.Component {
 
         return postComments.map((comment)=> 
             <div>
-            <li>{comment}</li>
+            <li>{eMail.shift()}:<br></br>{comment}</li>
             <hr></hr>
             </div>
             )
@@ -83,7 +83,7 @@ class ContentBox extends react.Component {
                 <div className="comments-text">
                 Comments:
                 <br></br>
-                <ul>
+                <ul className="comments-list">
                 {this.findComments(data.id)}
                 </ul>
                 {/* laudantium enim quasi est quidem magnam voluptate ipsam eos
