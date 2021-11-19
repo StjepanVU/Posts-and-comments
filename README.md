@@ -1,3 +1,5 @@
+This is a simple React project that fetches the data from JSONPlaceholder, specifically posts and connected comments and shows them in the Content Box of a Web app.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
