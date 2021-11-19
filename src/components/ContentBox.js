@@ -45,13 +45,20 @@ class ContentBox extends react.Component {
     findComments(id) {
         var comments = this.state.comments
         var postComments = []
+        var eMail = []
         comments.map((comments)=> {
             if(id === comments.postId) {
                 postComments.push(comments.body)
+                eMail.push(comments.email)
             }
         })
 
-        return postComments.map((comment)=> <li>{comment}</li>)
+        return postComments.map((comment)=> 
+            <div>
+            <li>{comment}</li>
+            <hr></hr>
+            </div>
+            )
         
     }
 
